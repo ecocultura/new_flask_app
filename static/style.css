@@ -1,0 +1,106 @@
+/* Importando Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Variables de colores */
+:root {
+  --primary-color: #4CAF50; /* Verde */
+  --secondary-color: #f9f9f9; /* Gris claro */
+  --accent-color: #FF5722; /* Naranja */
+  --text-color: #333; /* Gris oscuro */
+}
+
+/* Estilos generales */
+body {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos de los botones */
+button {
+  background-color: var(--primary-color); /* Color de fondo */
+  color: white; /* Color del texto */
+  border: 2px solid var(--primary-color); /* Borde sólido */
+  padding: 12px 24px; /* Espaciado interior */
+  border-radius: 25px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor al pasar el ratón */
+  font-family: 'Poppins', sans-serif; /* Tipo de letra */
+  font-weight: 600; /* Peso de la fuente */
+  text-transform: uppercase; /* Transformar texto a mayúsculas */
+  letter-spacing: 1px; /* Espaciado entre letras */
+  transition: all 0.3s ease; /* Transición suave */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+button:hover {
+  background-color: var(--accent-color); /* Cambia el color de fondo */
+  border-color: var(--accent-color); /* Cambia el color del borde */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
+}
+
+button:active {
+  transform: translateY(2px); /* Efecto de clic */
+}
+
+/* Estilo para la barra de navegación */
+.navbar {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.nav-link {
+  color: white !important;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent-color) !important;
+}
+
+/* Headers and Footer */
+header, footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Card Styles */
+.card {
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .card {
+    margin: 10px;
+  }
+
+  header, footer {
+    padding: 10px;
+  }
+}
