@@ -1,0 +1,21 @@
+si no funciona porque no reconoce app como modulo, seguir estos pasos:
+
+iniciar un entorno virtual:
+python3 -m venv venv
+source venv/bin/activate
+
+iniciar flask en un contexto:
+abrir el interprete de python en la consola:
+python
+from app import app, db
+with app.app_context():
+    db.create_all()
+
+exit()
+
+
+para guardar los cambios...:
+1) git status
+2) git add .
+3) git commit -m "Descripción detallada de los cambios realizados"
+4) git push
