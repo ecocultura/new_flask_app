@@ -2,7 +2,8 @@
 from datetime import datetime
 from app import db, login_manager
 from flask_login import UserMixin
-from sqlalchemy import ForeignKey 
+from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy.orm import relationship
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -37,6 +38,7 @@ class Comment(db.Model):
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.now)
     user_id = db.Column(db.Integer, ForeignKey('user.id'), nullable=False)
     post_id = db.Column(db.Integer, ForeignKey('post.id'), nullable=False)
+    author_id = db.Column(db.Integer, ForeignKey('user.id'), nullable=False)
 
     def __repr__(self):
         return f"Comment ('{self.content}', '{self.date_posted}')"

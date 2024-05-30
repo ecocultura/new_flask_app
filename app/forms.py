@@ -37,7 +37,7 @@ class ProfileForm(FlaskForm):
 
 
 class PostForm(FlaskForm):
-    tite = StringField('title', validators=[DataRequired()])
+    title = StringField('title', validators=[DataRequired()])
     content = TextAreaField('content', validators=[DataRequired()])
     submit = SubmitField('post')
 
