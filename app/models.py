@@ -34,11 +34,12 @@ class Post(db.Model):
     
 class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    content = db.Column(db.Text, nullable = False)
+    content = db.Column(db.Text, nullable=False)
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.now)
-    user_id = db.Column(db.Integer, ForeignKey('user.id'), nullable=False)
-    post_id = db.Column(db.Integer, ForeignKey('post.id'), nullable=False)
-    author_id = db.Column(db.Integer, ForeignKey('user.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    post_id = db.Column(db.Integer, db.ForeignKey('post.id'), nullable=False)
+    author = db.relationship('User', backref='comments', foreign_keys=[user_id])
+    
 
     def __repr__(self):
         return f"Comment ('{self.content}', '{self.date_posted}')"

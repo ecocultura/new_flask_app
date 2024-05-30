@@ -75,7 +75,8 @@ def new_post():
         return redirect(url_for('home'))
     return render_template('create_post.html', title='New Post', form=form)
 
-@app.route("/post/<int:post_id>", methods=["GET", "POST"])
+@app.route("/post/<int:post_id>", methods=['GET', 'POST'])
+@login_required
 def post(post_id):
     post = Post.query.get_or_404(post_id)
     form = CommentForm()
@@ -83,9 +84,9 @@ def post(post_id):
         comment = Comment(content=form.content.data, author=current_user, post=post)
         db.session.add(comment)
         db.session.commit()
-        flash('Your comment has been added', 'Success!!')
+        flash('Your comment has been created!', 'success')
         return redirect(url_for('post', post_id=post.id))
-    comment = Comment.query.filter_by(post_id=post.id).all()
-    return render_template('post.html', title=post.title, post=post, comments=comment, form=form)
+    comments = Comment.query.filter_by(post_id=post.id).all()
+    return render_template('post.html', title=post.title, post=post, form=form, comments=comments)
     
 
