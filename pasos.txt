@@ -19,3 +19,11 @@ para guardar los cambios...:
 2) git add .
 3) git commit -m "Descripción detallada de los cambios realizados"
 4) git push
+
+
+# ajuste de la base de datos a una con mas colunmas
+# Crear una nueva migración
+flask db migrate -m "Add Post and Comment models"
+
+# Aplicar la migración
+flask db upgrade
