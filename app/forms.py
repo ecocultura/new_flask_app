@@ -1,6 +1,6 @@
 # app/forms.py
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, BooleanField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, FileField, TextAreaField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from app.models import User
 
@@ -26,3 +26,22 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     remember = BooleanField('Remember Me')
     submit = SubmitField('Login')
+
+
+class ProfileForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired(), Length(min=2, max=150)])
+    email = StringField('E-mail', validators=[DataRequired(), Email(), Length(min=2, max=50)])
+    bio = StringField('Bio', validators=[Length(max=500)])
+    profile_picture = FileField('Profile Picture')
+    submit = SubmitField('Update Profile')
+
+
+class PostForm(FlaskForm):
+    tite = StringField('title', validators=[DataRequired()])
+    content = TextAreaField('content', validators=[DataRequired()])
+    submit = SubmitField('post')
+
+class CommentForm(FlaskForm):
+    content = TextAreaField('content', validators=[DataRequired()])
+    submit = SubmitField('comment')
+

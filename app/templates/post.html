@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>{{ post.title }}</h1>
+  <p>{{ post.content }}</p>
+  <p>Posted by {{ post.author.username }} on {{ post.date_posted }}</p>
+  <hr>
+  <h2>Comments</h2>
+  {% for comment in comments %}
+    <div class="comment">
+      <p>{{ comment.content }}</p>
+      <p>Comment by {{ comment.author.username }} on {{ comment.date_posted }}</p>
+    </div>
+  {% endfor %}
+  <hr>
+  <h2>Add a Comment</h2>
+  <form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <div>{{ form.content.label }} {{ form.content(rows=3) }}</div>
+    <div>{{ form.submit() }}</div>
+  </form>
+{% endblock %}
