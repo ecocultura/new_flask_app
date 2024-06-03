@@ -3,7 +3,7 @@
 {% block title %}Home{% endblock %}
 {% block content %}
     <h1>BIENVENIDOS AL NUEVO TWITTER HECHO EN FLASK</h1>
-    <h2>lamento la apariencia visual, luego me ocupo de eso</h2>
+    <h2> </h2>    
 
     {% if current_user.is_authenticated %}
         <a href="{{ url_for('new_post') }}" class="btn btn-primary">Create New Post</a>
@@ -12,12 +12,10 @@
     <hr>
     
     {% for post in posts %}
-        <div class="post">
-            <h2>
-                <a href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a>
-            </h2>
-            <p>{{ post.content }}</p>
-            <p>Posted by {{ post.author.username }} on {{ post.date_posted.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+        <div class="post" style="margin: 20px 0; padding: 20px; border: 1px solid #ddd; border-radius: 5px; background-color: #ebecf6;">
+            <h2 style="font-size: 1.5em; font-style: italic; color: #d2a7a7;"> <a href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
+            <p style="margin-bottom: 15px; font-size: 1em; line-height: 1.5; color: #555;">{{ post.content }}</p>
+            <p style="font-size: 1em; font-style: italic; color: #100e0e; margin-bottom: 15px;">Posted by {{ post.author.username }} on {{ post.date_posted.strftime('%Y-%m-%d %H:%M:%S') }}</p>
         </div>
         <hr>
     {% endfor %}

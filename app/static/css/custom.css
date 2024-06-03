@@ -1,0 +1,159 @@
+/* Navbar Styles */
+.custom-navbar {
+    background-color: #6f0404; /* Sky Blue */
+    }
+
+.custom-navbar-brand,
+.custom-nav-link {
+    color: #1c1c89; /* Dark Blue */
+    font-style: italic;
+}
+
+.custom-nav-link:hover {
+    color: #000000; /* Black */
+}
+
+.navbar-brand,
+.nav-link {
+    border: 2.5px solid #000000; /* Black Borders */
+    border-radius: 15px;
+    background-color: #a095d4; /* Dark Blue */
+    color: #ffffff; /* White Text */
+}
+
+.nav-link {
+    margin-left: 20px;
+}
+
+/* Post Styles */
+.post-container {
+    border: 1px solid #67acf5; /* Sky Blue Border */
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #d19f9f; /* White Background */
+    text-align: center;
+}
+
+.post-title-container {
+    background-color: #80a4f0; /* Sky Blue Background */
+    padding: 10px;
+    border-radius: 70px;
+}
+
+.post-title {
+    font-weight: bold;
+    color: #00008B; /* Dark Blue Text */
+    margin: 3;
+}
+
+.post-content {
+    margin-top: 20px;
+    text-align: left;
+    background-color: #fefbfb; /* White Background */
+    border: 3px solid #6e0202; /* Sky Blue Border */
+    padding: 20px;
+}
+
+.post-metadata {
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 10px;
+    text-align: left;
+}
+
+/* General styles for post containers */
+.post-container {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Title styling */
+.post-title-container {
+    margin-bottom: 10px;
+}
+
+.post-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #070378;
+}
+
+/* Post content styling */
+.post-content {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: #888;
+}
+
+/* Metadata styling */
+.post-metadata {
+    font-size: 1em;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+/* Likes and comments section */
+.post-likes {
+    margin-top: 10px;
+}
+
+.post-likes .btn {
+    font-size: 0.9em;
+    color: #007bff;
+}
+
+.post-likes i {
+    margin-right: 5px;
+    text-align: center;
+    
+}
+
+/* Comment form and section */
+.content-section {
+    margin-top: 30px;
+}
+
+.content-section .form-group {
+    margin-bottom: 15px;
+}
+
+.content-section .btn {
+    margin-top: 10px;
+}
+
+/* Profile image styling */
+.article-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Comment styling */
+.media {
+    margin-bottom: 20px;
+}
+
+.article-metadata {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.article-metadata a {
+    color: #b30505;
+    text-decoration: none;
+}
+
+.article-metadata a:hover {
+    text-decoration: underline;
+    color: #b30505;
+}
+
+.text-muted {
+    color: #080808;
+}

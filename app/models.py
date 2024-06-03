@@ -17,6 +17,7 @@ class User(db.Model, UserMixin):
     bio = db.Column(db.String(500), nullable=True)
     profile_picture = db.Column(db.String(150), nullable=True)
     posts = db.relationship('Post', backref='author', lazy=True)
+    image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
 
     def __repr__(self):
         return f"User('{self.username}', '{self.email}', '{self.profile_picture}')"
@@ -28,6 +29,7 @@ class Post(db.Model):
     content = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, ForeignKey('user.id'), nullable=False)
     comments = db.relationship('Comment', backref='post', lazy=True)
+    likes = db.relationship('Like', backref='post', lazy=True)
 
     def _repr__(self):
         return f"Post('{self.title}', '{self.date_posted}')"
@@ -43,4 +45,14 @@ class Comment(db.Model):
 
     def __repr__(self):
         return f"Comment ('{self.content}', '{self.date_posted}')"
+    
+class Like(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    post_id = db.Column(db.Integer, db.ForeignKey('post.id'), nullable=False)
+    date_liked = db.Column(db.DateTime, nullable=False, default=datetime.now)
+    
+    def __repr__(self):
+        return f"Like('{self.user_id}', '{self.post_id}')"
+
     
